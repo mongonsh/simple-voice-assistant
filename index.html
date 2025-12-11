@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubbles DS - Design System Documentation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;700&display=block" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">
+                <span class="logo-text">Bubbles DS</span>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#foundations">Foundations</a></li>
+                <li><a href="#components">Components</a></li>
+                <li><a href="#accessibility">Accessibility</a></li>
+                <li><a href="#resources">Resources</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <p class="hero-timestamp">Updated 1 hour ago</p>
+            <h1 class="hero-title">Bubbles DS Experiment</h1>
+            <p class="hero-subtitle">An experimental design system exploring modern UI patterns and accessibility standards</p>
+            <a href="#" class="hero-link">View on YouTube →</a>
+        </div>
+    </section>
+
+    <!-- Main Content Sections -->
+    <main class="main-content">
+        <div class="container">
+            <div class="cards-grid">
+                <!-- Foundations Card -->
+                <article class="card" id="foundations">
+                    <div class="card-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="48" height="48" rx="8" fill="#B1E400" opacity="0.2"/>
+                            <path d="M24 12L12 20V36L24 44L36 36V20L24 12Z" stroke="#212121" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h2 class="card-title">Foundations</h2>
+                    <p class="card-description">Core design principles, color systems, typography guidelines, and visual language that form the foundation of our design system.</p>
+                </article>
+
+                <!-- Components Card -->
+                <article class="card" id="components">
+                    <div class="card-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="48" height="48" rx="8" fill="#B1E400" opacity="0.2"/>
+                            <rect x="14" y="14" width="20" height="20" rx="2" stroke="#212121" stroke-width="2"/>
+                            <rect x="18" y="18" width="12" height="12" rx="1" stroke="#212121" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h2 class="card-title">Components</h2>
+                    <p class="card-description">Comprehensive UI component specifications, usage guidelines, interaction behaviors, and implementation examples.</p>
+                </article>
+
+                <!-- Accessibility Card -->
+                <article class="card" id="accessibility">
+                    <div class="card-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="48" height="48" rx="8" fill="#B1E400" opacity="0.2"/>
+                            <circle cx="24" cy="16" r="3" stroke="#212121" stroke-width="2"/>
+                            <path d="M24 22V32M18 26L24 22L30 26" stroke="#212121" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h2 class="card-title">A11y</h2>
+                    <p class="card-description">Accessibility standards, best practices, WCAG compliance guidelines, and inclusive design patterns for all users.</p>
+                </article>
+
+                <!-- Resources Card -->
+                <article class="card" id="resources">
+                    <div class="card-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="48" height="48" rx="8" fill="#B1E400" opacity="0.2"/>
+                            <path d="M16 18H32M16 24H32M16 30H26" stroke="#212121" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h2 class="card-title">Resources</h2>
+                    <p class="card-description">Design patterns, module libraries, templates, and additional resources to help you build with the design system.</p>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">2025 - Bubbles DS Experiment</p>
+            <p class="footer-credit">Built with Figma</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
