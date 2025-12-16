@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>さくら IT Support | 社内ITサポート</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="it-support-styles.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="background-animation">
+        <div class="sakura-container" id="sakuraContainer"></div>
+        <div class="gradient-overlay"></div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo-section">
+                <div class="sakura-icon">
+                    <svg viewBox="0 0 100 100" class="sakura-svg">
+                        <defs>
+                            <radialGradient id="petalGradient" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" style="stop-color:#FFB7C5"/>
+                                <stop offset="100%" style="stop-color:#FF69B4"/>
+                            </radialGradient>
+                        </defs>
+                        <g class="sakura-flower">
+                            <ellipse cx="50" cy="25" rx="12" ry="20" fill="url(#petalGradient)" class="petal"/>
+                            <ellipse cx="50" cy="25" rx="12" ry="20" fill="url(#petalGradient)" class="petal" transform="rotate(72 50 50)"/>
+                            <ellipse cx="50" cy="25" rx="12" ry="20" fill="url(#petalGradient)" class="petal" transform="rotate(144 50 50)"/>
+                            <ellipse cx="50" cy="25" rx="12" ry="20" fill="url(#petalGradient)" class="petal" transform="rotate(216 50 50)"/>
+                            <ellipse cx="50" cy="25" rx="12" ry="20" fill="url(#petalGradient)" class="petal" transform="rotate(288 50 50)"/>
+                            <circle cx="50" cy="50" r="8" fill="#FFD700"/>
+                        </g>
+                    </svg>
+                </div>
+                <div class="title-group">
+                    <h1 class="main-title">さくら</h1>
+                    <p class="sub-title">IT Support Assistant</p>
+                </div>
+            </div>
+            <div class="status-indicator">
+                <span class="status-dot"></span>
+                <span class="status-text">オンライン</span>
+            </div>
+        </header>
+
+        <!-- Assistant Avatar Section -->
+        <div class="avatar-section">
+            <div class="avatar-container" id="avatarContainer">
+                <div class="avatar-ring">
+                    <div class="avatar-ring-inner"></div>
+                </div>
+                <div class="avatar-image">
+                    <div class="operator-avatar">
+                        <div class="avatar-face">
+                            <div class="avatar-hair"></div>
+                            <div class="avatar-head">
+                                <div class="avatar-eyes">
+                                    <div class="eye left"></div>
+                                    <div class="eye right"></div>
+                                </div>
+                                <div class="avatar-mouth"></div>
+                            </div>
+                            <div class="avatar-headset">
+                                <div class="headset-band"></div>
+                                <div class="headset-ear left"></div>
+                                <div class="headset-ear right"></div>
+                                <div class="headset-mic"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sound-wave" id="soundWave">
+                    <span></span><span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+            <p class="avatar-greeting" id="avatarGreeting">お困りのことはございますか？</p>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="quick-actions">
+            <button class="quick-btn" data-issue="pc-freeze">
+                <span class="quick-icon">🖥️</span>
+                <span class="quick-label">PCフリーズ</span>
+            </button>
+            <button class="quick-btn" data-issue="dropbox">
+                <span class="quick-icon">📦</span>
+                <span class="quick-label">Dropbox</span>
+            </button>
+            <button class="quick-btn" data-issue="email">
+                <span class="quick-icon">📧</span>
+                <span class="quick-label">メール</span>
+            </button>
+            <button class="quick-btn" data-issue="network">
+                <span class="quick-icon">🌐</span>
+                <span class="quick-label">ネットワーク</span>
+            </button>
+            <button class="quick-btn" data-issue="password">
+                <span class="quick-icon">🔐</span>
+                <span class="quick-label">パスワード</span>
+            </button>
+            <button class="quick-btn" data-issue="other">
+                <span class="quick-icon">❓</span>
+                <span class="quick-label">その他</span>
+            </button>
+        </div>
+
+        <!-- Chat Container -->
+        <div class="chat-container">
+            <div class="chat-messages" id="chatMessages">
+                <!-- Welcome message -->
+                <div class="message assistant">
+                    <div class="message-avatar">
+                        <span>🌸</span>
+                    </div>
+                    <div class="message-content">
+                        <div class="message-bubble">
+                            <p>こんにちは！社内ITサポートの「さくら」です。</p>
+                            <p>パソコンのトラブルやソフトウェアの問題など、お気軽にご相談ください。音声でお話しすることもできますよ。</p>
+                        </div>
+                        <span class="message-time">今</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="input-area">
+                <div class="input-container">
+                    <button class="voice-btn" id="voiceBtn" title="音声入力">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm-1-9c0-.55.45-1 1-1s1 .45 1 1v6c0 .55-.45 1-1 1s-1-.45-1-1V5z"/>
+                            <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/>
+                        </svg>
+                    </button>
+                    <input type="text" id="messageInput" placeholder="メッセージを入力..." autocomplete="off">
+                    <button class="send-btn" id="sendBtn" title="送信">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="input-hint">
+                    <span>Enterで送信 • マイクボタンで音声入力</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Audio Player (Hidden) -->
+        <audio id="audioPlayer" style="display: none;"></audio>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>© 2024 社内ITサポート | 営業時間: 9:00 - 18:00 JST</p>
+            <p class="footer-contact">緊急時: IT部門 内線 1234</p>
+        </footer>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <p>さくらが考えています...</p>
+        </div>
+    </div>
+
+    <script src="it-support-app.js"></script>
+</body>
+</html>
